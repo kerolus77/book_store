@@ -1,3 +1,4 @@
+import 'package:book_stor/Core/services/them_services.dart';
 import 'package:book_stor/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,9 +13,10 @@ class BookStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return  GetMaterialApp(
     debugShowCheckedModeBanner: false,
-      home: SplashView(),
+    themeMode: ThemeServices().theme,
+      home: const SplashView(),
     );
   }
 }
