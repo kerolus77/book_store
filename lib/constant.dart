@@ -51,14 +51,14 @@ class Themes {
                 
     ));
   }
-  //   TextStyle get subtitleStyle{
-  //   return GoogleFonts.lato(
-  //     textStyle:  TextStyle
-  //               (fontSize: 16,
-  //               fontWeight: FontWeight.bold,
-  //               color:Get.isDarkMode?Colors.white:darkGreyClr),
-  //   );
-  // }
+    TextStyle get subtitleStyle{
+    return GoogleFonts.poppins(
+      textStyle:  const TextStyle
+                (fontSize: 19,
+                fontWeight: FontWeight.w600,
+               ),
+    );
+  }
   // TextStyle get bodyStyle{
   //   return GoogleFonts.lato(
   //     textStyle:  TextStyle

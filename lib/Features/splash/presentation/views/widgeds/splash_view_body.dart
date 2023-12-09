@@ -1,7 +1,8 @@
-import 'package:book_stor/Core/utils/assets.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../Core/utils/assets.dart';
 import '../../../../../constant.dart';
 import '../../../../page_view/presentation/view/page_view.dart';
 

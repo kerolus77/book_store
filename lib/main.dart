@@ -1,12 +1,12 @@
-import 'package:book_stor/Core/services/them_services.dart';
-import 'package:book_stor/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'Features/splash/presentation/views/splash_view.dart';
+import 'constant.dart';
 
 void main() {
   runApp(const BookStore());
 }
-
 
 class BookStore extends StatelessWidget {
   const BookStore({super.key});
@@ -14,8 +14,19 @@ class BookStore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    themeMode: ThemeServices().theme,
+      theme: ThemeData(
+      primaryColor: primaryClr,
+      scaffoldBackgroundColor: primaryClr,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: primaryClr,
+        iconTheme: IconThemeData(
+          color: Colors.grey,
+        ),
+      ),
+      ),
+      // Add a comma here
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
       home: const SplashView(),
     );
   }
