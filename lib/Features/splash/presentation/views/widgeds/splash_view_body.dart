@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+
+
 
 import '../../../../../Core/utils/assets.dart';
 import '../../../../../constant.dart';
@@ -64,6 +67,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
    void transitionPage() {
      Future.delayed(const Duration(seconds: 3),() {
       Get.to(()=> const PageViews(),transition: Transition.fade,duration: transitionDuration);
+   // GoRouter.of(context).push('/pageView');
     },);
   }
 }
