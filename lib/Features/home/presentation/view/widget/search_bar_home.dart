@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constant.dart';
+import '../../../../../size_config.dart';
 
 class SearchBarHome extends StatelessWidget {
   const SearchBarHome({super.key});
@@ -10,23 +11,75 @@ class SearchBarHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: SearchBar(
-        backgroundColor: const MaterialStatePropertyAll(primaryClr),
-        elevation: const MaterialStatePropertyAll(0),
-       leading: const Icon(Icons.search,color: Color.fromARGB(255, 128, 127, 127),size: 35,),
-       hintText: 'Search',
-       hintStyle: MaterialStatePropertyAll(Themes().subheadingStyle.copyWith(color: Colors.grey)),
-     side: const MaterialStatePropertyAll(BorderSide(color: Colors.grey)),
-     shape:MaterialStatePropertyAll(
-       RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18), // Adjust the radius as needed
-          side: const BorderSide(color: Colors.grey),
-           // Optional: Add a border color
-        )
-     ),
-     padding: const MaterialStatePropertyAll(EdgeInsets.all(1)),
-     
+      child:Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          
+          Container(
+            margin: const EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(left: 14),
+            width: SizeConfig.screenWidth,
+             height:SizeConfig.screenHeight*.066,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(22),
+              border: Border.all( color:Colors.grey),
+            ),
+            child: Row(
+              
+              children: [
+
+                const Padding(
+                  padding: EdgeInsets.only(top: 0,right: 5),
+                  child: Icon(Icons.search,color: clrIconButton,size: 30,),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 5),
+                    child: TextFormField(
+                     // controller: widget.controller,
+                     
+                      autofocus: false,
+                    
+                      
+                      style: subtitleStyle,
+                      cursorColor:  Colors.grey[700],
+                      cursorHeight: 20,
+                     
+                           
+                      decoration: InputDecoration(
+                        hintText: "Search",
+                       hintStyle: subheadingStyle.copyWith(color: Colors.grey[500]),
+                        enabledBorder: UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(22),
+                          borderSide: const BorderSide(
+                           
+                          color: primaryClr,
+                            width: 0,
+                          ),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(22),
+                          borderSide: const BorderSide(
+                            
+                             color: primaryClr,
+                            width: 0,
+                          ),
+                        ),
+                        
+                      ),
+                    ),
+                  ),
+                ),
+               
+              ],
+            ),
+          ),
+         
+        ],
       ),
+      
+    )
     );
   }
 }

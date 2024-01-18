@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -82,7 +81,7 @@ class _PageViewBodyState extends State<PageViewBody> {
   TextButton skipButton() {
     return TextButton(onPressed: (){
       Get.to(const Home(),transition: Transition.fadeIn,duration:  transitionDuration);
-    }, child:Text('Skip',style: Themes().subheadingStyle.copyWith(color:Colors.black),));
+    }, child:Text('Skip',style: subheadingStyle.copyWith(color:Colors.black),));
   }
 
 

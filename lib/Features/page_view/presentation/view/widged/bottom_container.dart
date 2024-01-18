@@ -47,11 +47,11 @@ class BottomContainer extends StatelessWidget {
                             children: indicator(_currentIndex, 3),
                           ),
                         ),
-                      Text(pages[_currentIndex].title,style: Themes().headingStyle,),
+                      Text(pages[_currentIndex].title,style: headingStyle,),
                       const SizedBox(height: 10,),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40),
-                        child: Text(pages[_currentIndex].body,style: Themes().subheadingStyle.copyWith(color: grey),textAlign: TextAlign.center,),
+                        child: Text(pages[_currentIndex].body,style:subheadingStyle.copyWith(color: grey),textAlign: TextAlign.center,),
                       ),
                       const SizedBox(height: 20,),
                       Button(label: 'Sign in', onTap: (){}, color: primaryClr),

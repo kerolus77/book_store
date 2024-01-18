@@ -29,7 +29,7 @@ class Button extends StatelessWidget {
         color: color,
         border: Border.all(width: 1,color: Colors.grey)
         ),
-        child: Text(label,style: Themes().buttonTitleStyle.copyWith(color: color==primaryClr?Colors.black:Colors.white),),
+        child: Text(label,style: buttonTitleStyle.copyWith(color: color==primaryClr?Colors.black:Colors.white),),
       ),
     );
   }

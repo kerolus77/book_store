@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               const ProfileIcon(),
               const SizedBox(width: 10,),
-              Text('Hi, kerolus',style: Themes().subtitleStyle.copyWith(color: Colors.black),),
+              Text('Hi, kerolus',style: subtitleStyle.copyWith(color: Colors.black),),
             ],
           ),
           Row(

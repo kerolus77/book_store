@@ -25,7 +25,7 @@ class AppBarButton extends StatelessWidget {
           color: primaryClr,
           border: Border.all(width: 1,color: Colors.grey)
           ),
-          child: Icon(icon,size: 30,color:const Color.fromARGB(255, 95, 94, 94), ),
+          child: Icon(icon,size: 30,color:clrIconButton, ),
         ),
       ),
     );

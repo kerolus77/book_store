@@ -12,7 +12,7 @@ class ProfileIcon extends StatelessWidget {
     return GestureDetector(
     child: const CircleAvatar(
       backgroundColor: Colors.white,
-      backgroundImage: AssetImage(AssetsData.profileIcon),radius: 25,),
+      backgroundImage: AssetImage(AssetsData.profileIcon),radius: 22,),
         );
   }
 }

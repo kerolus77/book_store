@@ -5,6 +5,7 @@ const secondaryColor=Color.fromARGB(255, 97, 124, 145);
 const primaryClr=Color.fromARGB(255,224,225,221);
 const indicatorColor=Color.fromARGB(255, 184, 198, 208);
 const grey=Color.fromARGB(255, 76, 75, 75);
+const clrIconButton=Color.fromARGB(255, 95, 94, 94);
 const transitionDuration=Duration(milliseconds: 250);
 
 
@@ -26,7 +27,7 @@ class Themes {
 //   );
 
 
-//}
+}
   TextStyle get headingStyle{
     return GoogleFonts.poppins(
       textStyle:  const TextStyle
@@ -55,18 +56,18 @@ class Themes {
     return GoogleFonts.poppins(
       textStyle:  const TextStyle
                 (fontSize: 19,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                ),
     );
   }
-  // TextStyle get bodyStyle{
-  //   return GoogleFonts.lato(
-  //     textStyle:  TextStyle
-  //               (fontSize: 24,
-  //               fontWeight: FontWeight.bold,
-  //               color:Get.isDarkMode?Colors.white:darkGreyClr),
-  //   );
-  // }
+  TextStyle get bodyStyle{
+    return GoogleFonts.poppins(
+      textStyle:  const TextStyle
+                (fontSize: 23,
+                fontWeight: FontWeight.w600,
+                ),
+    );
+  }
   //   TextStyle get body2Style{
   //   return GoogleFonts.lato(
   //     textStyle:  TextStyle
@@ -74,4 +75,4 @@ class Themes {
   //               fontWeight: FontWeight.w400,
   //               color:Get.isDarkMode?Colors.grey[300]:darkGreyClr),
   //   );
-  }
+  //}
