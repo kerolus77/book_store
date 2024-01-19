@@ -16,22 +16,21 @@ class BookStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MultiBlocProvider(
+    return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context)=>SliderCubit()),
-        BlocProvider(create: (context)=>CategoryListCubit())
+        BlocProvider(create: (context) => SliderCubit()),
+        BlocProvider(create: (context) => CategoryListCubit())
       ],
-
       child: GetMaterialApp(
         theme: ThemeData(
-        primaryColor: primaryClr,
-        scaffoldBackgroundColor: primaryClr,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: primaryClr,
-          iconTheme: IconThemeData(
-            color: Colors.grey,
+          primaryColor: primaryClr,
+          scaffoldBackgroundColor: primaryClr,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: primaryClr,
+            iconTheme: IconThemeData(
+              color: Colors.grey,
+            ),
           ),
-        ),
         ),
         // Add a comma here
         debugShowCheckedModeBanner: false,

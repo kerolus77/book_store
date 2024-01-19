@@ -10,9 +10,11 @@ class ProfileIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-    child: const CircleAvatar(
-      backgroundColor: Colors.white,
-      backgroundImage: AssetImage(AssetsData.profileIcon),radius: 22,),
-        );
+      child: const CircleAvatar(
+        backgroundColor: Colors.white,
+        backgroundImage: AssetImage(AssetsData.profileIcon),
+        radius: 22,
+      ),
+    );
   }
 }

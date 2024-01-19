@@ -11,22 +11,27 @@ class SliderHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
+    return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        CarouselSlider(items:  const [
-          SliderItems(image: AssetsData.sliderImage2, label: "Find the book you're looking for easier to read."),
-          SliderItems(image: AssetsData.sliderImage1,label: "Find the book you're looking for easier to read."),
-          SliderItems(image: AssetsData.sliderImage3,label: "Find the book you're looking for easier to read."),
-        ], options: CarouselOptions(
-          viewportFraction: 1,
-          onPageChanged: ((index, _) => BlocProvider.of<SliderCubit>(context).incrementSlider(index)),
-          autoPlay: true,
-          
-        )
-        ),
-
-       
+        CarouselSlider(
+            items: const [
+              SliderItems(
+                  image: AssetsData.sliderImage2,
+                  label: "Find the book you're looking for easier to read."),
+              SliderItems(
+                  image: AssetsData.sliderImage1,
+                  label: "Find the book you're looking for easier to read."),
+              SliderItems(
+                  image: AssetsData.sliderImage3,
+                  label: "Find the book you're looking for easier to read."),
+            ],
+            options: CarouselOptions(
+              viewportFraction: 1,
+              onPageChanged: ((index, _) =>
+                  BlocProvider.of<SliderCubit>(context).incrementSlider(index)),
+              autoPlay: true,
+            )),
       ],
     );
   }

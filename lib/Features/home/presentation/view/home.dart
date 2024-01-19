@@ -8,11 +8,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
-      child:  Scaffold(
-        body: HomeViewBody()
-       
-        
-      ),
+      child: Scaffold(body: HomeViewBody()),
     );
   }
 }

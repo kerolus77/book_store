@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../constant.dart';
 
 class AppBarButton extends StatelessWidget {
-   final IconData icon;
+  final IconData icon;
   final Function() onTap;
   const AppBarButton({
     Key? key,
@@ -21,11 +21,14 @@ class AppBarButton extends StatelessWidget {
           width: 33,
           height: 33,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-          color: primaryClr,
-          border: Border.all(width: 1,color: Colors.grey)
+              borderRadius: BorderRadius.circular(8),
+              color: primaryClr,
+              border: Border.all(width: 1, color: Colors.grey)),
+          child: Icon(
+            icon,
+            size: 30,
+            color: clrIconButton,
           ),
-          child: Icon(icon,size: 30,color:clrIconButton, ),
         ),
       ),
     );

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import 'widged/page_view_body.dart';
@@ -11,17 +9,8 @@ class PageViews extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body:PageViewBody()
-        ,
-       
+        body: PageViewBody(),
       ),
     );
   }
-
-  
 }
-
-
-
-
-

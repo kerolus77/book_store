@@ -4,6 +4,7 @@ part of 'category_list_cubit.dart';
 abstract class CategoryListState {}
 
 final class CategoryListInitial extends CategoryListState {}
+
 class CategoryListUpdated extends CategoryListState {
   final int updatedIndex;
 
