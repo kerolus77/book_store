@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Features/home/Data/slider/slider_cubit.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/utils/assets.dart';
+import '../../view_model/slider_cubit/slider_cubit.dart';
 import 'slider_items.dart';
 
 class SliderHome extends StatelessWidget {

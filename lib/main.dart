@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Features/home/Data/slider/slider_cubit.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-import 'Features/home/Data/category_cubit/category_list_cubit.dart';
+
+import 'Features/home/presentation/view_model/category_cubit/category_list_cubit.dart';
+
+import 'Features/home/presentation/view_model/slider_cubit/slider_cubit.dart';
 import 'Features/splash/presentation/views/splash_view.dart';
 import 'constant.dart';
 

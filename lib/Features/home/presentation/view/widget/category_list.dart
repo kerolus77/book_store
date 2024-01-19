@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Features/home/Data/category_cubit/category_list_cubit.dart';
+
 import 'package:flutter_application_3/constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../view_model/category_cubit/category_list_cubit.dart';
 
 List<String> categories = ['All', 'Art', 'Psychology', 'Fantasy', 'Romance'];
 

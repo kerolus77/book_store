@@ -1,10 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Features/home/Data/slider/slider_cubit.dart';
+
 import 'package:flutter_application_3/constant.dart';
 import 'package:flutter_application_3/size_config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../view_model/slider_cubit/slider_cubit.dart';
 import 't_circular_container.dart';
 
 class SliderItems extends StatelessWidget {
