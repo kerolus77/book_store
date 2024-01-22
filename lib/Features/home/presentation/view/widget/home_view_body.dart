@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'category_books.dart';
 import 'category_list.dart';
 import 'custom_app_bar.dart';
 import 'search_bar_home.dart';
@@ -16,6 +17,7 @@ class HomeViewBody extends StatelessWidget {
         SearchBarHome(),
         SliderHome(),
         CategoryList(),
+        CategoryBooks()
       ],
     );
   }

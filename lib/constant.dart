@@ -33,8 +33,7 @@ TextStyle get headingStyle {
     ),
   );
 }
-
-TextStyle get subheadingStyle {
+ TextStyle get subheadingStyle {
   return GoogleFonts.poppins(
     textStyle: const TextStyle(
       fontSize: 16,
@@ -68,11 +67,12 @@ TextStyle get bodyStyle {
     ),
   );
 }
-//   TextStyle get body2Style{
-//   return GoogleFonts.lato(
-//     textStyle:  TextStyle
-//               (fontSize: 14,
-//               fontWeight: FontWeight.w400,
-//               color:Get.isDarkMode?Colors.grey[300]:darkGreyClr),
-//   );
-//}
+TextStyle get bodyStyle13 {
+  return GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.w600,
+      color:Color.fromARGB(255, 157, 155, 155)
+    ),
+  );
+}

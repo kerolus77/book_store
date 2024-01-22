@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_application_3/constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +12,7 @@ class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 45, // Set the desired height for your row
+      height: 3, // Set the desired height for your row
       child: BlocBuilder<CategoryListCubit, CategoryListState>(
         builder: (context, state) {
           return ListView.builder(
