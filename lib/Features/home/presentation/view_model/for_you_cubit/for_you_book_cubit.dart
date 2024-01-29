@@ -9,9 +9,9 @@ class ForYouBookCubit extends Cubit<ForYouBookState> {
   ForYouBookCubit(this.homeRepo) : super(ForYouBookInitial());
   final HomeRepo homeRepo;
 
-  Future<void> fetchForYouBooks()async{
+  Future<void> fetchForYouBooks() async {
     emit(ForYouBookLoading());
-    var result=await homeRepo.fetchForYouBooks();
+    var result = await homeRepo.fetchForYouBooks();
     result.fold((failure) {
       emit(ForYouBookFailure(errMessage: failure.errMessage));
     }, (books) {

@@ -12,7 +12,7 @@ class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 3, // Set the desired height for your row
+      height: 40, // Set the desired height for your row
       child: BlocBuilder<CategoryListCubit, CategoryListState>(
         builder: (context, state) {
           return ListView.builder(

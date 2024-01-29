@@ -6,7 +6,7 @@ import '../../../../../constant.dart';
 class AppBarButton extends StatelessWidget {
   final IconData icon;
   final Function() onTap;
-  const AppBarButton({
+  const  AppBarButton({
     Key? key,
     required this.icon,
     required this.onTap,

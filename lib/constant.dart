@@ -7,6 +7,7 @@ const indicatorColor = Color.fromARGB(255, 184, 198, 208);
 const grey = Color.fromARGB(255, 76, 75, 75);
 const clrIconButton = Color.fromARGB(255, 95, 94, 94);
 const transitionDuration = Duration(milliseconds: 250);
+const starColor = Color.fromARGB(255, 255, 180, 5);
 
 class Themes {
 //   static final light=ThemeData(
@@ -33,7 +34,8 @@ TextStyle get headingStyle {
     ),
   );
 }
- TextStyle get subheadingStyle {
+
+TextStyle get subheadingStyle {
   return GoogleFonts.poppins(
     textStyle: const TextStyle(
       fontSize: 16,
@@ -67,12 +69,27 @@ TextStyle get bodyStyle {
     ),
   );
 }
+
 TextStyle get bodyStyle13 {
   return GoogleFonts.poppins(
     textStyle: const TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w600,
-      color:Color.fromARGB(255, 157, 155, 155)
-    ),
+        fontSize: 13,
+        fontWeight: FontWeight.w600,
+        color: Color.fromARGB(255, 144, 144, 144)),
   );
+}
+
+TextStyle get bookTitle15 {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w700,
+          overflow: TextOverflow.ellipsis));
+}
+TextStyle get appBar20 {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          overflow: TextOverflow.ellipsis));
 }
