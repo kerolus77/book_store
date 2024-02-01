@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/widget/button.dart';
+import 'button_page_view.dart';
 import '../../../../../constant.dart';
 import '../../../../../size_config.dart';
 import '../../view_models/view_page_model.dart';
@@ -69,11 +69,11 @@ class BottomContainer extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Button(label: 'Sign in', onTap: () {}, color: primaryClr),
+              ButtonPageView(label: 'Sign in', onTap: () {}, color: primaryClr),
               const SizedBox(
                 height: 7,
               ),
-              Button(label: 'Sign up', onTap: () {}, color: secondaryColor)
+              ButtonPageView(label: 'Sign up', onTap: () {}, color: secondaryColor)
             ],
           ),
         ));

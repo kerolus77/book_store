@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../constant.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FavoriteButton extends StatelessWidget {
   const FavoriteButton({super.key});
@@ -9,17 +9,17 @@ class FavoriteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.only(left: 10),
       child: GestureDetector(
         child: Container(
-          width: 35,
-          height: 35,
+          width: 33,
+          height: 33,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: primaryClr,
               border: Border.all(width: 1, color: const Color.fromARGB(255, 177, 176, 176))),
           child: const Icon(FontAwesomeIcons.heart,
-            size: 27,
+            size: 25,
             color: clrIconButton,
           ),
         ),

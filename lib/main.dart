@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/services/service_locator.dart';
 import 'package:flutter_application_3/Features/home/Data/repos/home_repo_impl.dart';
+import 'package:flutter_application_3/Features/home/presentation/view_model/category_book_cubit/category_book_cubit.dart';
 import 'package:flutter_application_3/Features/home/presentation/view_model/for_you_cubit/for_you_book_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-import 'Features/home/presentation/view_model/category_cubit/category_list_cubit.dart';
+import 'Features/home/presentation/view_model/category_list_cubit/category_list_cubit.dart';
 import 'Features/home/presentation/view_model/free_book_cubit/free_book_cubit.dart';
 import 'Features/home/presentation/view_model/slider_cubit/slider_cubit.dart';
 import 'Features/splash/presentation/views/splash_view.dart';
@@ -32,6 +33,10 @@ class BookStore extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               FreeBookCubit(getIt.get<HomeRepoImpl>())..fetchFreeBooks(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              CategoryBookCubit(getIt.get<HomeRepoImpl>()),
         )
       ],
       child: GetMaterialApp(

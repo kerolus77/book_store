@@ -8,17 +8,17 @@ import '../../../../../constant.dart';
 import 'second_book_style_list.dart';
 
 class SeeAllPage extends StatelessWidget {
-  final String bookCategory;
-  final List<BookModel> books;
+  
   const SeeAllPage({
     Key? key,
-    required this.bookCategory,
-    required this.books,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
+    final Map<String,dynamic> arguments=Get.arguments;
+    final String bookCategory=arguments['bookCategory'];
+    final List<BookModel> books=arguments['books'];
+
     return SafeArea(child: Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: ()=>Get.back(), icon: const Icon(Icons.keyboard_arrow_left_rounded)),
@@ -28,10 +28,10 @@ class SeeAllPage extends StatelessWidget {
         //toolbarHeight: ,
         
       ),
-      body: const Column(
+      body:  Column(
         children: [
-          SearchBarHome(),
-          SecondBookStyleList()
+          const SearchBarHome(),
+          SecondBookStyleList(books:books)
         ],
       ),
     ));

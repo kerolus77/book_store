@@ -5,4 +5,5 @@ import 'package:flutter_application_3/Features/home/Data/models/book_model/book_
 abstract class HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchForYouBooks();
   Future<Either<Failure, List<BookModel>>> fetchFreeBooks();
+  Future<Either<Failure, List<BookModel>>> fetchCategoryBooks(String category);
 }

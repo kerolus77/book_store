@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/widget/rating_bar.dart';
+import 'package:flutter_application_3/Features/book_details/presentation/view/book_details_screen.dart';
 import 'package:flutter_application_3/constant.dart';
+import 'package:get/get.dart';
 
 import '../../../Data/models/book_model/book_model.dart';
 import 'custom_book_image.dart';
@@ -16,6 +18,9 @@ class BookMainListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Get.to(()=>const BookDetailsScreen(),arguments: {'book':book});
+      },
       child: SizedBox(
         width: 150,
         child: Padding(
@@ -36,7 +41,7 @@ class BookMainListViewItem extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    book.volumeInfo.authors![0],
+                    book.volumeInfo.authors?[0]??'',
                     style: bodyStyle13,
                     maxLines: 1,
                   ),

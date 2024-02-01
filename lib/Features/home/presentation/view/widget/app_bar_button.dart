@@ -15,7 +15,7 @@ class AppBarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.only(left: 10),
       child: GestureDetector(
         child: Container(
           width: 33,
@@ -26,7 +26,7 @@ class AppBarButton extends StatelessWidget {
               border: Border.all(width: 1, color: Colors.grey)),
           child: Icon(
             icon,
-            size: 30,
+            size: 27,
             color: clrIconButton,
           ),
         ),

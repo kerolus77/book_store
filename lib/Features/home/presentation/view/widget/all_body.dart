@@ -30,7 +30,7 @@ class AllBody extends StatelessWidget {
                     children: [
                       BookType(
                       type: 'For You',
-                      allPageFun: () => Get.to(()=>SeeAllPage(bookCategory: 'For You', books: state.books)),
+                      allPageFun: () => Get.to(()=>const SeeAllPage(),arguments: {'bookCategory': 'For You', 'books': state.books}),
 
                       ),
                       MainBookStyleList(books: state.books),
@@ -39,7 +39,7 @@ class AllBody extends StatelessWidget {
                 } else if (state is ForYouBookFailure) {
                   return Text(state.errMessage);
                 } else {
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 }
               },
             ),
@@ -58,7 +58,7 @@ class AllBody extends StatelessWidget {
                      children: [
                       BookType(
               type: 'Free Books',
-              allPageFun: () => Get.to(()=>SeeAllPage(bookCategory: 'Free You', books: state.books)),
+              allPageFun: () => Get.to(()=>const SeeAllPage(),arguments: {'bookCategory': 'Free You', 'books': state.books}),
             ),
                        MainBookStyleList(books:state.books),
                      ],
@@ -67,7 +67,7 @@ class AllBody extends StatelessWidget {
                 }else if(state is FreeBookFailure){
                   return Text(state.errMessage);
                 }else{
-                return  CircularProgressIndicator();
+                return  const CircularProgressIndicator();
                 }
                
               },

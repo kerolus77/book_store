@@ -3,11 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 const secondaryColor = Color.fromARGB(255, 97, 124, 145);
 const primaryClr = Color.fromARGB(255, 224, 225, 221);
+const primaryClrWithOps = Color.fromARGB(0, 224, 225, 221);
 const indicatorColor = Color.fromARGB(255, 184, 198, 208);
 const grey = Color.fromARGB(255, 76, 75, 75);
 const clrIconButton = Color.fromARGB(255, 95, 94, 94);
 const transitionDuration = Duration(milliseconds: 250);
 const starColor = Color.fromARGB(255, 255, 180, 5);
+const containerBackground=Color.fromARGB(222, 225, 225, 225);
 
 class Themes {
 //   static final light=ThemeData(
@@ -78,7 +80,14 @@ TextStyle get bodyStyle13 {
         color: Color.fromARGB(255, 144, 144, 144)),
   );
 }
-
+TextStyle get buttonStyle22 {
+  return GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.w500,
+        color: Color.fromARGB(255, 255, 255, 255)),
+  );
+}
 TextStyle get bookTitle15 {
   return GoogleFonts.poppins(
       textStyle: const TextStyle(

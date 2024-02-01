@@ -1,72 +1,86 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/widget/rating_bar.dart';
+import 'package:flutter_application_3/Features/home/Data/models/book_model/book_model.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/cart_button.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/custom_book_image.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/favorite_button.dart';
 import 'package:flutter_application_3/size_config.dart';
+import 'package:get/get.dart';
 
 import '../../../../../constant.dart';
+import '../../../../book_details/presentation/view/book_details_screen.dart';
 
 class BookSecondListViewItem extends StatelessWidget {
-  const 
-  BookSecondListViewItem({super.key});
+  final BookModel book;
+  const BookSecondListViewItem({
+    Key? key,
+    required this.book,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-      height: SizeConfig.screenHeight/5,
-     
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
+      onTap: () {
+        Get.to(()=>const BookDetailsScreen(),arguments: {'book':book});
+      },
+      child: Container(
         
-      ),
-      child:  Row(
-        
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-        const SizedBox(
-          width: 95,
-          child: CustomBookImage(imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnh9dCYH4Cm5c6NYGSo93pvY6IDLGNJ7tfDw&usqp=CAU"),
-          ),
-          const SizedBox(width: 20,),
-          SizedBox(
-            width: SizeConfig.screenWidth/2.5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('book.volumeInfo.title!', style: bookTitle15, maxLines: 1),
-                const SizedBox(height: 5,),
-                Text(
-                      'book.volumeInfo.authors![0]',
-                      style: bodyStyle13,
-                      maxLines: 1,
-                    ),
-                    const SizedBox(height: 5,),
-                    const RatingBar(rating: 4.6, ratingCount: 0, part: false,size: 25,),
-                    const SizedBox(height: 10,),
-                    Row(
-                      children: [
-                        const FavoriteButton(),
-                        CartButton()
-                      ],
-                    )
-              ],
-            ),
-          ),
-          const SizedBox(width: 20,),
-           Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text('20\$',style: subheadingStyle.copyWith(color: Color.fromARGB(255, 34, 98, 36)),),
-            ),
-          )
+        height: SizeConfig.screenHeight/5,
+       
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(20),
+          color: containerBackground,
+        ),
+        child:  Row(
           
-
-      ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+           SizedBox(
+            width: 95,
+            height: 125,
+            child: CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
+            ),
+            const SizedBox(width: 25,),
+            SizedBox(
+              width: SizeConfig.screenWidth/2.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  Text(book.volumeInfo.title!, style: bookTitle15, maxLines: 1),
+                  const SizedBox(height: 5,),
+                  Text(
+                        book.volumeInfo.authors![0],
+                        style: bodyStyle13,
+                        maxLines: 1,
+                      ),
+                      const SizedBox(height: 5,),
+                       RatingBar(rating:book.volumeInfo.averageRating==null?0:book.volumeInfo.averageRating!
+                       , ratingCount: 0, part: false,size: 25,),
+                      const SizedBox(height: 10,),
+                      const Row(
+                        children: [
+                          FavoriteButton(),
+                          CartButton()
+                        ],
+                      )
+                ],
+              ),
+            ),
+            const SizedBox(width: 20,),
+             Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(book.saleInfo?.retailPrice?.amount==null?'Free':'${((book.saleInfo!.retailPrice!.amount)!.ceil())%100}\$',style: subheadingStyle.copyWith(color: const Color.fromARGB(255, 34, 98, 36)),),
+              ),
+            )
+            
+      
+        ],
+        ),
       ),
     );
   }

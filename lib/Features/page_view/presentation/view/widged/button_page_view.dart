@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../../constant.dart';
 import '../../../../../size_config.dart';
 
-class Button extends StatelessWidget {
+class ButtonPageView extends StatelessWidget {
   final String label;
   final Function() onTap;
   final Color color;
-  const Button({
+  const ButtonPageView({
     Key? key,
     required this.label,
     required this.onTap,
@@ -32,7 +32,8 @@ class Button extends StatelessWidget {
             border: Border.all(width: 1, color: Colors.grey)),
         child: Text(
           label,
-          style: buttonStyle22
+          style: buttonTitleStyle.copyWith(
+              color: color == primaryClr ? Colors.black : Colors.white),
         ),
       ),
     );
