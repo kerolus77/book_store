@@ -11,6 +11,7 @@ class AboutBook extends StatelessWidget {
     required this.book,
   }) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Align(
