@@ -10,6 +10,7 @@ const clrIconButton = Color.fromARGB(255, 95, 94, 94);
 const transitionDuration = Duration(milliseconds: 250);
 const starColor = Color.fromARGB(255, 255, 180, 5);
 const containerBackground=Color.fromARGB(222, 225, 225, 225);
+const borderColor=Color.fromARGB(255, 156, 155, 152);
 
 class Themes {
 //   static final light=ThemeData(
@@ -26,6 +27,8 @@ class Themes {
 // brightness: Brightness.dark,
 
 //   );
+
+
 }
 
 TextStyle get headingStyle {
@@ -36,8 +39,17 @@ TextStyle get headingStyle {
     ),
   );
 }
+TextStyle get font35W700 {
+  return GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      fontSize: 35,
+      fontWeight: FontWeight.w700,
+    ),
+  );
+}
 
-TextStyle get subheadingStyle {
+
+TextStyle get font16W600 {
   return GoogleFonts.poppins(
     textStyle: const TextStyle(
       fontSize: 16,
@@ -62,7 +74,14 @@ TextStyle get subtitleStyle {
     ),
   );
 }
-
+TextStyle get font24W600 {
+  return GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w600,
+    ),
+  );
+}
 TextStyle get bodyStyle {
   return GoogleFonts.poppins(
     textStyle: const TextStyle(
@@ -88,11 +107,25 @@ TextStyle get buttonStyle22 {
         color: Color.fromARGB(255, 255, 255, 255)),
   );
 }
-TextStyle get bookTitle15 {
+TextStyle get font15W700 {
   return GoogleFonts.poppins(
       textStyle: const TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w700,
+          overflow: TextOverflow.ellipsis));
+}
+TextStyle get font15W500 {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+          ));
+}
+TextStyle get inputTitleSemiBold14 {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
           overflow: TextOverflow.ellipsis));
 }
 TextStyle get appBar20 {

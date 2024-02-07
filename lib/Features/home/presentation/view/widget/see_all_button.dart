@@ -1,8 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'package:flutter_application_3/Features/home/presentation/view/widget/see_all_book_page.dart';
 import 'package:flutter_application_3/constant.dart';
 
 class SeeAllButton extends StatelessWidget {
