@@ -11,8 +11,8 @@ class CartButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: GestureDetector(
         child: Container(
-          width: 35,
-          height: 35,
+          width: 33,
+          height: 33,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: primaryClr,
@@ -24,6 +24,6 @@ class CartButton extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
   }
 }

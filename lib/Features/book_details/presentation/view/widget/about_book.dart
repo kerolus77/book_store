@@ -33,7 +33,7 @@ class AboutBook extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('About Book',style:bookTitle15 ,),
+                  Text('About Book',style:font15W700 ,),
                   const SizedBox(height: 5,),
                   Text(book.volumeInfo.description ==null?' ':book.volumeInfo.description!)
                   

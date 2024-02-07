@@ -90,7 +90,7 @@ class _PageViewBodyState extends State<PageViewBody> {
         },
         child: Text(
           'Skip',
-          style: subheadingStyle.copyWith(color: Colors.black),
+          style: font16W600.copyWith(color: Colors.black),
         ));
   }
 
