@@ -47,7 +47,7 @@ class SearchBarHome extends StatelessWidget {
 
                           decoration: InputDecoration(
                             hintText: "Search",
-                            hintStyle: subheadingStyle.copyWith(
+                            hintStyle: font16W600.copyWith(
                                 color: Colors.grey[500]),
                             enabledBorder: UnderlineInputBorder(
                               borderRadius: BorderRadius.circular(22),

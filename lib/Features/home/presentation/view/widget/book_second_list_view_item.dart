@@ -49,7 +49,7 @@ class BookSecondListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center, 
                 children: [
-                  Text(book.volumeInfo.title!, style: bookTitle15, maxLines: 1),
+                  Text(book.volumeInfo.title!, style: font15W700, maxLines: 1),
                   const SizedBox(height: 5,),
                   Text(
                         book.volumeInfo.authors![0],
@@ -74,7 +74,7 @@ class BookSecondListViewItem extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20),
               child: Align(
                 alignment: Alignment.topLeft,
-                child: Text(book.saleInfo?.retailPrice?.amount==null?'Free':'${((book.saleInfo!.retailPrice!.amount)!.ceil())%100}\$',style: subheadingStyle.copyWith(color: const Color.fromARGB(255, 34, 98, 36)),),
+                child: Text(book.saleInfo?.retailPrice?.amount==null?'Free':'${((book.saleInfo!.retailPrice!.amount)!.ceil())%100}\$',style: font16W600.copyWith(color: const Color.fromARGB(255, 34, 98, 36)),),
               ),
             )
             

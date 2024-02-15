@@ -22,7 +22,7 @@ class BookType extends StatelessWidget {
         children: [
           Text(
             type,
-            style: subheadingStyle,
+            style: font16W600,
           ),
           SeeAllButton(allPageFun: allPageFun,)
         ],

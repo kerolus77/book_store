@@ -17,6 +17,7 @@ class RatingBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   // ignore: no_leading_underscores_for_local_identifiers
    final List<Widget> _starList = [];
     int realNumber = rating.floor();
     int partNumber = ((rating - realNumber) * 10).ceil();
@@ -25,13 +26,13 @@ class RatingBar extends StatelessWidget {
     ratingCount != 0
         ? _starList.add(
             Padding(
-                padding: EdgeInsets.only(left: 3),
+                padding: const EdgeInsets.only(left: 3),
                 child: Text('($ratingCount)',
                     style: TextStyle(
                         fontSize: size * 0.8,
                         color: Theme.of(context).disabledColor))),
           )
-        : SizedBox();
+        : const SizedBox();
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceAround,

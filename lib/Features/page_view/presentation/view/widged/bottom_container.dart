@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/Features/sign_in/presentation/view/sign_in_screen.dart';
+import 'package:get/get.dart';
 
 import 'button_page_view.dart';
 import '../../../../../constant.dart';
@@ -62,14 +64,16 @@ class BottomContainer extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
                   pages[_currentIndex].body,
-                  style: subheadingStyle.copyWith(color: grey),
+                  style: font16W600.copyWith(color: grey),
                   textAlign: TextAlign.center,
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              ButtonPageView(label: 'Sign in', onTap: () {}, color: primaryClr),
+              ButtonPageView(label: 'Sign in', onTap: () {
+                Get.to(()=>SignInScreen());
+              }, color: primaryClr),
               const SizedBox(
                 height: 7,
               ),

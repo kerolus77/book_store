@@ -45,7 +45,7 @@ class CategoryList extends StatelessWidget {
                     child: Center(
                       child: Text(
                         categories[index],
-                        style: subheadingStyle.copyWith(
+                        style: font16W600.copyWith(
                             color: BlocProvider.of<CategoryListCubit>(context)
                                         .categoryCurrentIndex ==
                                     index
