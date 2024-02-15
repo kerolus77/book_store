@@ -12,9 +12,11 @@ class SignInRepoImpl implements SignInRepo{
   @override
   Future <Either<String,int>> SignIn(SignInRequestBody signInRequestBody)async {
     try {
-  final credential = await  FirebaseAuth.instance.signInWithEmailAndPassword(
+  final 
+  credential = await  FirebaseAuth.instance.signInWithEmailAndPassword(
     email: signInRequestBody.email,
     password: signInRequestBody.password
+    
     );
   return right(0);
 } on FirebaseAuthException catch (e) {
