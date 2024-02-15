@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Features/sign_in/presentation/view/sign_in_screen.dart';
 import 'package:get/get.dart';
 
-import 'button_page_view.dart';
 import '../../../../../constant.dart';
 import '../../../../../size_config.dart';
 import '../../view_models/view_page_model.dart';
+import 'button_page_view.dart';
 import 'indicator.dart';
 
 class BottomContainer extends StatelessWidget {
@@ -72,6 +72,7 @@ class BottomContainer extends StatelessWidget {
                 height: 20,
               ),
               ButtonPageView(label: 'Sign in', onTap: () {
+                  
                 Get.to(()=>SignInScreen());
               }, color: primaryClr),
               const SizedBox(
