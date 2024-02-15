@@ -134,4 +134,13 @@ TextStyle get appBar20 {
           fontSize: 20,
           fontWeight: FontWeight.w500,
           overflow: TextOverflow.ellipsis));
+
+}
+TextStyle get font13DarkBlueRegular  {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 13,
+          fontWeight: FontWeight.w400,
+          overflow: TextOverflow.ellipsis));
+
 }

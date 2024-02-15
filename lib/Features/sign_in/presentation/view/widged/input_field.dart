@@ -4,29 +4,42 @@ import 'package:flutter_application_3/constant.dart';
 
 class InputField extends StatelessWidget {
 
-  final String hint;
+
   final String title;
   final TextEditingController? controller;
-  final Widget? widget;
   final bool maxLines;
   final TextInputType? textInputType;
   final Widget ? prefixIcon;
   final Widget ? suffixIcon;
   final bool? isObscureText;
-
+  final EdgeInsetsGeometry? contentPadding;
+  final InputBorder? focusedBorder;
+  final InputBorder? enabledBorder;
+  final TextStyle? inputTextStyle;
+  final TextStyle? hintStyle;
+  final String hintText;
+  final Color? backgroundColor;
+  final Function(String?) validator;
 
   InputField({
     Key? key,
-    required this.hint,
+    
     required this.title,
     this.controller,
-    this.widget,
+
     this.maxLines=false,
     this.textInputType,
     this.prefixIcon,
     this.suffixIcon,
     this.isObscureText,
-    
+    this.contentPadding,
+    this.focusedBorder,
+    this.enabledBorder,
+    this.inputTextStyle,
+    this.hintStyle,
+    required this.hintText,
+    this.backgroundColor,
+    required this.validator,
   }) : super(key: key);
 
   @override
@@ -35,27 +48,40 @@ class InputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title,style:font16W600 ,),
-        SizedBox(height: 10,),
+        const SizedBox(height: 10,),
         TextFormField(
+          
                       decoration: InputDecoration(
                         isDense: true,
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                        
-                        hintText: hint,
-                        hintStyle: font15W500,
-                        enabledBorder: const OutlineInputBorder(
-                          
+                        contentPadding: contentPadding?? const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+                        hintText: hintText,
+                        hintStyle:hintStyle?? font15W500,
+                        enabledBorder:enabledBorder?? const OutlineInputBorder(
                           borderSide: BorderSide(
                             color: borderColor,
                             width: 1.3,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder:focusedBorder?? const OutlineInputBorder(
                           borderSide: BorderSide(
                             //color: secondaryColor,
                             width: 1.3,
                           ),
                         ),
+                         errorBorder: const OutlineInputBorder(
+          borderSide:   BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          
+        ),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          
+        ),
                         prefixIcon: prefixIcon,
                         suffixIcon: suffixIcon,
                       ),
@@ -64,28 +90,15 @@ class InputField extends StatelessWidget {
                       controller: controller,
                       autofocus: false,
                       keyboardType:textInputType ,
-                      readOnly: widget != null ? true : false,
                       style: font16W600,
                       cursorColor: borderColor,
-                                      
+                      validator: (value) {
+                        return validator(value);
+                      },
                 
                       
                     ),
       ],
     );
   }
-
-// bool isRequiredFieldValid(String? value) {
-//   return value != null && value.isNotEmpty;
-// }
-// String? _validation(String? value, String field) {
-//     if (field == 'Title' || field == 'Note') {
-//       if (value == null || value.isEmpty) {
-//         setState(() {
-//        test =true;
-//         });
-//       }
-//     }
-//     return null;
-//   }
 }
