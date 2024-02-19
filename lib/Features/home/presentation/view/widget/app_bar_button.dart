@@ -17,6 +17,7 @@ class AppBarButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: GestureDetector(
+        onTap: onTap,
         child: Container(
           width: 33,
           height: 33,
