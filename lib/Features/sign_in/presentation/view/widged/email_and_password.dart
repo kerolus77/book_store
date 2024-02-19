@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Core/services/app_regex.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view/widged/password_validations.dart';
 import 'package:flutter_application_3/Features/sign_in/presentation/view_model/cubit/sign_in_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../Core/widget/input_field.dart';
 import '../../../../../constant.dart';
-import 'input_field.dart';
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});
@@ -15,39 +13,44 @@ class EmailAndPassword extends StatefulWidget {
 }
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
-  bool isObscureText=true;
-  bool hasLowerCase = false;
-  bool hasUpperCase = false;
-  bool hasSpecialCharacters = false;
-  bool hasNumber = false;
-  bool hasMinLength = false;
-  late TextEditingController passwordController;
+   bool isObscureText=true;
+  // bool hasLowerCase = false;
+  // bool hasUpperCase = false;
+  // bool hasSpecialCharacters = false;
+  // bool hasNumber = false;
+  // bool hasMinLength = false;
+  // late TextEditingController passwordController;
 
-  @override
-  void initState() {
-    super.initState();
-    passwordController=context.read<SignInCubit>().passwordController;
-    setupPasswordControllerListener();
+//   @override
+//   void initState() {
+//     super.initState();
+//     passwordController=context.read<SignInCubit>().passwordController;
+//     setupPasswordControllerListener();
 
-  }
+//   }
 
   
-void setupPasswordControllerListener() {
-  passwordController.addListener(() { 
-    setState(() {
-      hasLowerCase=AppRegex.hasLowerCase(passwordController.text);
-      hasUpperCase=AppRegex.hasUpperCase(passwordController.text);
-      hasSpecialCharacters=AppRegex.hasSpecialCharacter(passwordController.text);
-      hasNumber=AppRegex.hasNumber(passwordController.text);
-      hasMinLength=AppRegex.hasMinLength(passwordController.text);
+// void setupPasswordControllerListener() {
+//   passwordController.addListener(() { 
+//     setState(() {
+//       hasLowerCase=AppRegex.hasLowerCase(passwordController.text);
+//       hasUpperCase=AppRegex.hasUpperCase(passwordController.text);
+//       hasSpecialCharacters=AppRegex.hasSpecialCharacter(passwordController.text);
+//       hasNumber=AppRegex.hasNumber(passwordController.text);
+//       hasMinLength=AppRegex.hasMinLength(passwordController.text);
 
-    });
-  });
-}
+//     });
+//   });
+// }
+// @override
+//   void dispose() {
+//     context.read<SignInCubit>().disposeFormKey();
+//     super.dispose();
+//   }
   @override
   Widget build(BuildContext context) {
     return Form(
-                          key: context.read<SignInCubit>().formKey,
+                          key: context.read<SignInCubit>().signInFormKey,
                           child:Column(
                             children: [
                                InputField( 
@@ -67,9 +70,10 @@ void setupPasswordControllerListener() {
                             validator: (value){
                               if(value==null ||value.isEmpty){
                                 return 'Please enter a valid password';
-                              }else if(!hasLowerCase||!hasMinLength||!hasNumber||!hasSpecialCharacters||!hasUpperCase){
-                                return '';
-                              }
+                               }
+                              //else if(!hasLowerCase||!hasMinLength||!hasNumber||!hasSpecialCharacters||!hasUpperCase){
+                              //   return '';
+                              // }
                             },
                             controller: context.read<SignInCubit>().passwordController,
                             title: 'Password',
@@ -90,11 +94,11 @@ void setupPasswordControllerListener() {
                             
                           ),),
                           SizedBox(height: 10,),
-                          PasswordValidations(hasLowerCase: hasLowerCase,
-                           hasUpperCase: hasUpperCase,
-                            hasSpecialCharacters: hasSpecialCharacters,
-                             hasNumber: hasNumber, 
-                             hasMinLength: hasMinLength)
+                          // PasswordValidations(hasLowerCase: hasLowerCase,
+                          //  hasUpperCase: hasUpperCase,
+                          //   hasSpecialCharacters: hasSpecialCharacters,
+                          //    hasNumber: hasNumber, 
+                          //    hasMinLength: hasMinLength)
                           
                             
                             

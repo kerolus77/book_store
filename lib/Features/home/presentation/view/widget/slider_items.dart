@@ -17,7 +17,7 @@ class SliderItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        width: SizeConfig.screenWidth,
+        width: double.infinity,
 
         // margin:const EdgeInsets.only(left: 20,right: 20) ,
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -26,14 +26,14 @@ class SliderItems extends StatelessWidget {
           alignment: Alignment.centerLeft,
           children: [
             AspectRatio(
-              aspectRatio: 4.9 / 2,
+              aspectRatio: 10 / 4,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25),
                 child: Image(fit: BoxFit.fill, image: AssetImage(image)),
               ),
             ),
             AspectRatio(
-              aspectRatio: 16 / 6.5,
+              aspectRatio: 10 / 4,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),

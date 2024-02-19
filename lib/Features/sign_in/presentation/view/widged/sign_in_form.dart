@@ -1,19 +1,25 @@
+
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Core/widget/button.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view/widged/email_and_password.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view/widged/sign_in_block_listener.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view/widged/social_media_image.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view_model/cubit/sign_in_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
+import '../../../../../Core/widget/button.dart';
 import '../../../../../constant.dart';
+import '../../../../sign_up/presentation/view/sign_up_screen.dart';
+import '../../view_model/cubit/sign_in_cubit.dart';
+import './email_and_password.dart';
+import './sign_in_block_listener.dart';
 import 'or_divider.dart';
+import 'social_media_image.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({
     super.key,
   });
+
 
   @override
   State<SignInForm> createState() => _SignInFormState();
@@ -21,7 +27,7 @@ class SignInForm extends StatefulWidget {
 
 class _SignInFormState extends State<SignInForm> {
 
-  
+ 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -35,7 +41,7 @@ class _SignInFormState extends State<SignInForm> {
             const SizedBox(height:25 ,),
             Column(
               children: [
-                EmailAndPassword(),
+                const EmailAndPassword(),
             const SizedBox(height: 10,),
             Align(
               alignment: Alignment.centerRight,
@@ -51,26 +57,39 @@ class _SignInFormState extends State<SignInForm> {
             const SizedBox(height: 20,),
             const OrDivider(),
             const SizedBox(height: 25,),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SocialMediaImage(icon: FontAwesomeIcons.facebook,color: Color.fromARGB(255, 59, 93, 230)),
-                SizedBox(width: 30,),
-                SocialMediaImage(icon: FontAwesomeIcons.twitter,color: Color.fromARGB(255, 61, 200, 255)),
-                SizedBox(width: 30,),
-                SocialMediaImage(icon: FontAwesomeIcons.google,color: Color.fromARGB(255, 233, 30, 30)),
+                SocialMediaImage(icon: FontAwesomeIcons.facebook,color: const Color.fromARGB(255, 59, 93, 230),
+                onTap: () => context.read<SignInCubit>().emitSignInWithFacebookState(),),
+                const SizedBox(width: 30,),
+                SocialMediaImage(icon: FontAwesomeIcons.twitter,color: const Color.fromARGB(255, 61, 200, 255),
+                onTap: ()=> context.read<SignInCubit>().emitSignInWithTwitterState()),
+                const SizedBox(width: 30,),
+                SocialMediaImage(icon: FontAwesomeIcons.google,color: const Color.fromARGB(255, 233, 30, 30),
+                onTap:  () => context.read<SignInCubit>().emitSignInWithGoogleState(),),
               ],
             ),
-            SizedBox(height: 30,),
-            RichText(text: TextSpan(
-                                                children: [
-                                                TextSpan(text: 'Don\'t have an account? ',
-                                                style: font15W500.copyWith(color: Color.fromARGB(251, 69, 67, 67))
-                                                ),
-                                                TextSpan(text: 'Sign up',style: font15W700.copyWith(color: Colors.black,decoration: TextDecoration.underline))
-                                                ]
-                                              ),),
-                                              SignInBlockListener(),
+            const SizedBox(height: 30,),
+          RichText(
+      text: TextSpan(
+        children: [
+          const TextSpan(
+            text: 'Don\'t have an account? ',
+            style: TextStyle(color: Color.fromARGB(251, 69, 67, 67), fontSize: 15, fontWeight: FontWeight.w500),
+          ),
+          TextSpan(
+            text: 'Sign up',
+            style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w700, decoration: TextDecoration.underline),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                Get.offAll(() => const SignUpScreen());
+              },
+          ),
+        ],
+      ),
+    ),
+    const SignInBlockListener(),
             
               ],
             ),
@@ -81,7 +100,7 @@ class _SignInFormState extends State<SignInForm> {
     );
   }
   void validateThenDoLogin(BuildContext context) {
-  if(context.read<SignInCubit>().formKey.currentState!.validate()){
+  if(context.read<SignInCubit>().signInFormKey.currentState!.validate()){
     context.read<SignInCubit>().emitSignInState(); 
   }
 }

@@ -23,6 +23,7 @@ class BookMainListViewItem extends StatelessWidget {
       },
       child: SizedBox(
         width: 150,
+        
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
