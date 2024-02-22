@@ -29,7 +29,7 @@ class SignUpBlockListener extends StatelessWidget {
         },
         success: (success){
           Get.back();
-          Get.offAll(()=>Home());
+          Get.offAll(()=>const Home());
 
         },
         error: (errMessage) {
@@ -38,7 +38,7 @@ class SignUpBlockListener extends StatelessWidget {
         
       );
     },
-    child: SizedBox.shrink(),
+    child: const SizedBox.shrink(),
     );
   }
   

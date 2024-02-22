@@ -110,12 +110,12 @@ void setupPasswordControllerListener() {
                             ),
                             
                           ),),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           !hasLowerCase||!hasMinLength||!hasNumber||!hasSpecialCharacters||!hasUpperCase?PasswordValidations(hasLowerCase: hasLowerCase,
                            hasUpperCase: hasUpperCase,
                             hasSpecialCharacters: hasSpecialCharacters,
                              hasNumber: hasNumber, 
-                             hasMinLength: hasMinLength):SizedBox.shrink(),
+                             hasMinLength: hasMinLength):const SizedBox.shrink(),
                              const SizedBox(height:15 ,),
                            InputField(
                             title: 'Confirm Password',

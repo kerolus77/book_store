@@ -21,7 +21,7 @@ class SignUpBody extends StatelessWidget {
               ),
               ),
               Container(
-        color: Color.fromARGB(88, 255, 255, 255),
+        color: const Color.fromARGB(88, 255, 255, 255),
       ),
           const SignUpForm(),
         ],

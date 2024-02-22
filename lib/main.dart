@@ -6,8 +6,7 @@ import 'package:flutter_application_3/Features/home/presentation/view_model/cate
 import 'package:flutter_application_3/Features/home/presentation/view_model/for_you_cubit/for_you_book_cubit.dart';
 import 'package:flutter_application_3/Features/sign_in/data/repo/sign_in_repo_impl.dart';
 import 'package:flutter_application_3/Features/sign_in/presentation/view_model/cubit/sign_in_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_bloc/flutter_bloc.dart'; 
 import 'package:get/get.dart';
 
 import 'Features/home/presentation/view_model/category_list_cubit/category_list_cubit.dart';

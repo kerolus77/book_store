@@ -109,12 +109,7 @@ class _PageViewBodyState extends State<PageViewBody> {
   TextButton skipButton() {
     return TextButton(
         onPressed: () {
-  //          @override
-  // void dispose() {
-  //   // TODO: implement dispose
-  //   super.dispose();
-  //   _pageController.dispose();
-  // }
+ 
           Get.to(const Home(),
               transition: Transition.fadeIn, duration: transitionDuration);
         },

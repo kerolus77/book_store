@@ -21,7 +21,7 @@ class InputField extends StatelessWidget {
   final Color? backgroundColor;
   final Function(String?) validator;
 
-  InputField({
+  const InputField({
     Key? key,
     
     required this.title,
