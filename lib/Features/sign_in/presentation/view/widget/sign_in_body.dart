@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/utils/assets.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view/widged/sign_in_form.dart';
+import 'package:flutter_application_3/Features/sign_in/presentation/view/widget/sign_in_form.dart';
 
 
 class SignInBody extends StatelessWidget {

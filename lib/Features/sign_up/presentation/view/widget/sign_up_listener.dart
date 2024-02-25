@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/home.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view_model/cubit/sign_in_cubit.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view_model/cubit/sign_in_state.dart';
 import 'package:flutter_application_3/constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-class SignInBlockListener extends StatelessWidget {
-  const SignInBlockListener({super.key});
+import '../../view_model/cubit/sign_up_cubit.dart';
+import '../../view_model/cubit/sign_up_state.dart';
+
+class SignUpBlockListener extends StatelessWidget {
+  const SignUpBlockListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignInCubit,SignInState>(
-      listenWhen: (previous, current)=>current is Loadingl||current is Success||current is Error,
+    return BlocListener<SignUpCubit,SignUpState>(
+      listenWhen: (previous, current)=>current is Loading||current is Success||current is Error,
       listener: (context, state) {
       state.whenOrNull(
         loading: (){
@@ -31,7 +32,6 @@ class SignInBlockListener extends StatelessWidget {
 
         },
         error: (errMessage) {
-          errMessage==null?null:
           setUpErrorState(context,errMessage);
         },
         

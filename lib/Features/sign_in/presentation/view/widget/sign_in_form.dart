@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import '../../../../../Core/widget/button.dart';
 import '../../../../../constant.dart';
+import '../../../../reset_password/presentation/view/reset_password.dart';
 import '../../../../sign_up/presentation/view/sign_up_screen.dart';
 import '../../view_model/cubit/sign_in_cubit.dart';
 import './email_and_password.dart';
@@ -15,19 +16,12 @@ import './sign_in_block_listener.dart';
 import 'or_divider.dart';
 import 'social_media_image.dart';
 
-class SignInForm extends StatefulWidget {
+class SignInForm extends StatelessWidget {
   const SignInForm({
     super.key,
   });
 
 
-  @override
-  State<SignInForm> createState() => _SignInFormState();
-}
-
-class _SignInFormState extends State<SignInForm> {
-
- 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -45,7 +39,8 @@ class _SignInFormState extends State<SignInForm> {
             const SizedBox(height: 10,),
             Align(
               alignment: Alignment.centerRight,
-              child: Text('Forgot password !',style:font15W700,),
+              child: GestureDetector(child: Text('Forgot password !',style:font15W700ellipsis,),
+              onTap: () => Get.to(()=>ResetPassword()),),
               
             ),
             const SizedBox(height: 20,),
@@ -99,11 +94,11 @@ class _SignInFormState extends State<SignInForm> {
       ),
     );
   }
+
   void validateThenDoLogin(BuildContext context) {
   if(context.read<SignInCubit>().signInFormKey.currentState!.validate()){
     context.read<SignInCubit>().emitSignInState(); 
   }
 }
-     
 }
 

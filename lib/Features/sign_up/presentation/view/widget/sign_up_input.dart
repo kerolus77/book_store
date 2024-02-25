@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/services/app_regex.dart';
 import '../../../../../constant.dart';
-import '../../../../sign_in/presentation/view/widged/password_validations.dart';
+import '../../../../sign_in/presentation/view/widget/password_validations.dart';
 import '../../view_model/cubit/sign_up_cubit.dart';
 
 class SignUpInput extends StatefulWidget {
@@ -122,7 +122,7 @@ void setupPasswordControllerListener() {
                              hintText: 'password',
                             validator: (value){
                               if(value==null ||value.isEmpty||value!=passwordController.text){
-                                return 'Please enter a valid password';
+                                return 'Both passwords must match';
                                }
                               
                             },

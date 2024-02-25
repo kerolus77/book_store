@@ -48,7 +48,7 @@ class InputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title,style:font16W600 ,),
-        const SizedBox(height: 10,),
+        const SizedBox(height: 4,),
         TextFormField(
           
                       decoration: InputDecoration(

@@ -4,9 +4,11 @@ import 'package:flutter_application_3/Core/services/service_locator.dart';
 import 'package:flutter_application_3/Features/home/Data/repos/home_repo_impl.dart';
 import 'package:flutter_application_3/Features/home/presentation/view_model/category_book_cubit/category_book_cubit.dart';
 import 'package:flutter_application_3/Features/home/presentation/view_model/for_you_cubit/for_you_book_cubit.dart';
+import 'package:flutter_application_3/Features/reset_password/data/repos/reset_password_repo_impl.dart';
+import 'package:flutter_application_3/Features/reset_password/presentation/view_models/cubit/reset_password_cubit.dart';
 import 'package:flutter_application_3/Features/sign_in/data/repo/sign_in_repo_impl.dart';
 import 'package:flutter_application_3/Features/sign_in/presentation/view_model/cubit/sign_in_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart'; 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 import 'Features/home/presentation/view_model/category_list_cubit/category_list_cubit.dart';
@@ -59,6 +61,10 @@ class BookStore extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               SignUpCubit(getIt.get<SignUpRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              ResetPasswordCubit(getIt.get<ResetPasswordRepoImpl>()),
         ),
       ],
       child: GetMaterialApp(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widged/page_view_body.dart';
+import 'widget/page_view_body.dart';
 
 class PageViews extends StatelessWidget {
   const PageViews({super.key});
