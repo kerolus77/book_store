@@ -21,7 +21,7 @@ class InputField extends StatelessWidget {
   final Color? backgroundColor;
   final Function(String?) validator;
 
-  InputField({
+  const InputField({
     Key? key,
     
     required this.title,
@@ -48,7 +48,7 @@ class InputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title,style:font16W600 ,),
-        const SizedBox(height: 10,),
+        const SizedBox(height: 4,),
         TextFormField(
           
                       decoration: InputDecoration(

@@ -5,20 +5,20 @@ class SocialMediaImage extends StatelessWidget {
   final IconData icon;
   final Color color;
   final double size;
+  final Function()onTap;
   const SocialMediaImage({
     Key? key,
     required this.icon,
     required this.color,
-    this.size=30
+    this.size=30, 
+    required this.onTap
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     
-    return Container(
-      decoration: BoxDecoration(
-        
-      ),
+    return GestureDetector(
+      onTap: onTap,
       child: Icon(icon,color: color,size: size,),
     );
   }

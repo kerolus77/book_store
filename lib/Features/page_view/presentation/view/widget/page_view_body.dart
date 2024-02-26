@@ -18,6 +18,7 @@ class PageViewBody extends StatefulWidget {
 
 class _PageViewBodyState extends State<PageViewBody> {
   int _currentIndex = 0;
+  late Timer _timer;
 
   final PageController _pageController = PageController(initialPage: 0);
 
@@ -46,7 +47,7 @@ class _PageViewBodyState extends State<PageViewBody> {
   }
 
     void jumpToNextPage() {
-    Timer.periodic(const Duration(seconds: 4), (timer) {
+    _timer=Timer.periodic(const Duration(seconds: 4), (timer) {
      if(_pageController.hasClients){ if (_currentIndex < pages.length - 1) {
         _currentIndex = (_currentIndex + 1) % pages.length;
         // _pageController.animateToPage(
@@ -64,12 +65,13 @@ class _PageViewBodyState extends State<PageViewBody> {
     @override
   void dispose() {
     _pageController.dispose();
+    _timer.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    
     return SizeConfig.orientation == Orientation.landscape
         ? Row(
             children: [
@@ -107,12 +109,7 @@ class _PageViewBodyState extends State<PageViewBody> {
   TextButton skipButton() {
     return TextButton(
         onPressed: () {
-  //          @override
-  // void dispose() {
-  //   // TODO: implement dispose
-  //   super.dispose();
-  //   _pageController.dispose();
-  // }
+ 
           Get.to(const Home(),
               transition: Transition.fadeIn, duration: transitionDuration);
         },

@@ -23,6 +23,7 @@ class BookMainListViewItem extends StatelessWidget {
       },
       child: SizedBox(
         width: 150,
+        
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -36,7 +37,7 @@ class BookMainListViewItem extends StatelessWidget {
               Expanded(
                   child: Column(
                 children: [
-                  Text(book.volumeInfo.title!, style: font15W700, maxLines: 1),
+                  Text(book.volumeInfo.title!, style: font15W700ellipsis, maxLines: 1),
                   const SizedBox(
                     height: 5,
                   ),

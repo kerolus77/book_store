@@ -28,7 +28,7 @@ class CategoryList extends StatelessWidget {
                         .setCategoryIndex(index);
                         BlocProvider.of<CategoryBookCubit>(context)
                         .fetchCategoryBooks(categories[index]);
-                    print('Tapped on ${categories[index]}');
+                    
                     
                   },
                   child: Container(

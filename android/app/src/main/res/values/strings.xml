@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">bookly store</string>
+    <string name="facebook_app_id">1757258938095195</string>
+    <string name="fb_login_protocol_scheme">fba3aa2237c08fbed733242e5155f0a5d7</string>
+    <string name="facebook_client_token">b795e12258c7649bac8588c9034ef6a5</string>
+
+</resources>

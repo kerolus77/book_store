@@ -49,7 +49,7 @@ class BookSecondListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center, 
                 children: [
-                  Text(book.volumeInfo.title!, style: font15W700, maxLines: 1),
+                  Text(book.volumeInfo.title!, style: font15W700ellipsis, maxLines: 1),
                   const SizedBox(height: 5,),
                   Text(
                         book.volumeInfo.authors![0],

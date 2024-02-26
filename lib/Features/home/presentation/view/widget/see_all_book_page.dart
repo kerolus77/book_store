@@ -4,7 +4,8 @@ import 'package:flutter_application_3/Features/home/Data/models/book_model/book_
 import 'package:flutter_application_3/Features/home/presentation/view/widget/search_bar_home.dart';
 import 'package:get/get.dart';
 
-import '../../../../../constant.dart';
+import '../../../../../Core/widget/app_bar.dart';
+
 import 'second_book_style_list.dart';
 
 class SeeAllPage extends StatelessWidget {
@@ -20,14 +21,7 @@ class SeeAllPage extends StatelessWidget {
     final List<BookModel> books=arguments['books'];
 
     return SafeArea(child: Scaffold(
-      appBar: AppBar(
-        leading: IconButton(onPressed: ()=>Get.back(), icon: const Icon(Icons.keyboard_arrow_left_rounded)),
-        centerTitle: true,
-        title: Text(bookCategory),
-        titleTextStyle: appBar20.copyWith(color: Colors.black),
-        //toolbarHeight: ,
-        
-      ),
+      appBar: Appbar(title: bookCategory),
       body:  Column(
         children: [
           const SearchBarHome(),
@@ -37,3 +31,5 @@ class SeeAllPage extends StatelessWidget {
     ));
   }
 }
+
+

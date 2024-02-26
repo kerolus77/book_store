@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constant.dart';
@@ -31,7 +32,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               AppBarButton(
                 icon: Icons.notifications_outlined,
-                onTap: () {},
+                onTap: ()async {
+                  await FirebaseAuth.instance.signOut();
+                },
               ),
               AppBarButton(
                 icon: Icons.settings_outlined,
