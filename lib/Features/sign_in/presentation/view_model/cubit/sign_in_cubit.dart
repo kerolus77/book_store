@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Features/sign_in/data/models/sign_in_request_body.dart';
 import 'package:flutter_application_3/Features/sign_in/data/repo/sign_in_repo.dart';

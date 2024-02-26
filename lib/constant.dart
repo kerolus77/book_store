@@ -107,18 +107,34 @@ TextStyle get buttonStyle22 {
         color: Color.fromARGB(255, 255, 255, 255)),
   );
 }
+TextStyle get font15W700ellipsis {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w700,
+          overflow: TextOverflow.ellipsis
+          ));
+}
 TextStyle get font15W700 {
   return GoogleFonts.poppins(
       textStyle: const TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w700,
-          overflow: TextOverflow.ellipsis));
+          
+          ));
 }
 TextStyle get font15W500 {
   return GoogleFonts.poppins(
       textStyle: const TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w500,
+          ));
+}
+TextStyle get font14W600 {
+  return GoogleFonts.poppins(
+      textStyle: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
           ));
 }
 TextStyle get inputTitleSemiBold14 {

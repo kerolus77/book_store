@@ -16,7 +16,7 @@ class SliderHome extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             height: 150,
             child: CarouselSlider(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/home.dart';
-
 import 'package:flutter_application_3/constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -29,7 +28,7 @@ class SignUpBlockListener extends StatelessWidget {
         },
         success: (success){
           Get.back();
-          Get.offAll(()=>Home());
+          Get.offAll(()=>const Home());
 
         },
         error: (errMessage) {
@@ -38,7 +37,7 @@ class SignUpBlockListener extends StatelessWidget {
         
       );
     },
-    child: SizedBox.shrink(),
+    child: const SizedBox.shrink(),
     );
   }
   

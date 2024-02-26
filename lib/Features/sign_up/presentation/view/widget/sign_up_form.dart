@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/widget/button.dart';
 import 'package:flutter_application_3/Features/sign_in/presentation/view/sign_in_screen.dart';
-import 'package:flutter_application_3/Features/sign_up/presentation/view/widged/sign_up_listener.dart';
+import 'package:flutter_application_3/Features/sign_up/presentation/view/widget/sign_up_listener.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +40,7 @@ class SignUpForm extends StatelessWidget {
               style: font15W500.copyWith(color: const Color.fromARGB(251, 69, 67, 67))
               ),
               TextSpan(text: 'Sign In',
-              style: font15W700.copyWith(color: Colors.black,decoration: TextDecoration.underline),
+              style: font15W700ellipsis.copyWith(color: Colors.black,decoration: TextDecoration.underline),
               recognizer: TapGestureRecognizer()
                 ..onTap= (){
                 Get.offAll(()=>const SignInScreen());

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Core/utils/assets.dart';
-import 'package:flutter_application_3/Features/sign_in/presentation/view/widged/sign_in_form.dart';
 
+import '../../../../../Core/utils/assets.dart';
+import 'sign_up_form.dart';
 
-class SignInBody extends StatelessWidget {
-  const SignInBody({super.key});
+class SignUpBody extends StatelessWidget {
+  const SignUpBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SingleChildScrollView(
+      child: SizedBox(
       width: double.infinity,
+      // height: double.infinity,
       child: Stack(
         children: [
           const Positioned.fill(
@@ -21,11 +23,10 @@ class SignInBody extends StatelessWidget {
               Container(
         color: const Color.fromARGB(88, 255, 255, 255),
       ),
-          const SignInForm(),
+          const SignUpForm(),
         ],
       ),
     )
-    ;
+    );
   }
 }
-

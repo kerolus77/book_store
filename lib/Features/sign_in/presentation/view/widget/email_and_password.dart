@@ -93,7 +93,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                             ),
                             
                           ),),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           // PasswordValidations(hasLowerCase: hasLowerCase,
                           //  hasUpperCase: hasUpperCase,
                           //   hasSpecialCharacters: hasSpecialCharacters,

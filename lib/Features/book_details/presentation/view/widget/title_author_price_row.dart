@@ -21,7 +21,7 @@ class TitleAuthorPriceRow extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               Text(book.volumeInfo.title!, style: font15W700.copyWith(overflow: TextOverflow.clip),),
+               Text(book.volumeInfo.title!, style: font15W700ellipsis.copyWith(overflow: TextOverflow.clip),),
                     const SizedBox(
                       height: 5,
                     ),

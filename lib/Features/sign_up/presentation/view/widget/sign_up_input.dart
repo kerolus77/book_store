@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/services/app_regex.dart';
 import '../../../../../constant.dart';
-import '../../../../sign_in/presentation/view/widged/password_validations.dart';
+import '../../../../sign_in/presentation/view/widget/password_validations.dart';
 import '../../view_model/cubit/sign_up_cubit.dart';
 
 class SignUpInput extends StatefulWidget {
@@ -110,19 +110,19 @@ void setupPasswordControllerListener() {
                             ),
                             
                           ),),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           !hasLowerCase||!hasMinLength||!hasNumber||!hasSpecialCharacters||!hasUpperCase?PasswordValidations(hasLowerCase: hasLowerCase,
                            hasUpperCase: hasUpperCase,
                             hasSpecialCharacters: hasSpecialCharacters,
                              hasNumber: hasNumber, 
-                             hasMinLength: hasMinLength):SizedBox.shrink(),
+                             hasMinLength: hasMinLength):const SizedBox.shrink(),
                              const SizedBox(height:15 ,),
                            InputField(
                             title: 'Confirm Password',
                              hintText: 'password',
                             validator: (value){
                               if(value==null ||value.isEmpty||value!=passwordController.text){
-                                return 'Please enter a valid password';
+                                return 'Both passwords must match';
                                }
                               
                             },

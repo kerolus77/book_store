@@ -27,7 +27,7 @@ class SignInBlockListener extends StatelessWidget {
         },
         success: (success){
           Get.back();
-          Get.offAll(()=>Home());
+          Get.offAll(()=>const Home());
 
         },
         error: (errMessage) {
@@ -37,7 +37,7 @@ class SignInBlockListener extends StatelessWidget {
         
       );
     },
-    child: SizedBox.shrink(),
+    child: const SizedBox.shrink(),
     );
   }
   
@@ -54,7 +54,7 @@ class SignInBlockListener extends StatelessWidget {
         ),
         content: Text(
           errMessage,
-          style: font15W700,
+          style: font15W700ellipsis,
         ),
         actions: [
           TextButton(

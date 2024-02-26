@@ -22,7 +22,7 @@ class CategoryBookBody extends StatelessWidget {
                        childAspectRatio: 0.7
 
                     ), 
-                    padding: EdgeInsets.only(left: 25,right: 20),
+                    padding: const EdgeInsets.only(left: 25,right: 20),
            itemBuilder:(context, index) {
              
               return Container(
@@ -37,7 +37,7 @@ class CategoryBookBody extends StatelessWidget {
            );} else if(state is CategoryBookFailure){
               return Text(state.errMessage);
              }else{
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
              }
       },
     );
