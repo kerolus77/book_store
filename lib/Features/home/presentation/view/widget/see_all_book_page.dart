@@ -5,7 +5,8 @@ import 'package:flutter_application_3/Features/home/presentation/view/widget/sea
 import 'package:get/get.dart';
 
 import '../../../../../Core/widget/app_bar.dart';
-
+import '../../../../../Core/widget/button.dart';
+import '../../../../../constant.dart';
 import 'second_book_style_list.dart';
 
 class SeeAllPage extends StatelessWidget {
@@ -19,15 +20,19 @@ class SeeAllPage extends StatelessWidget {
     final Map<String,dynamic> arguments=Get.arguments;
     final String bookCategory=arguments['bookCategory'];
     final List<BookModel> books=arguments['books'];
-
+     
     return SafeArea(child: Scaffold(
       appBar: Appbar(title: bookCategory),
       body:  Column(
         children: [
           const SearchBarHome(),
-          SecondBookStyleList(books:books)
+          
+          SecondBookStyleList(books:books),
+
         ],
+        
       ),
+      
     ));
   }
 }

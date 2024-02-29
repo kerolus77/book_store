@@ -4,11 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 import '../../../../../constant.dart';
+import '../../../Data/models/book_model/book_model.dart';
 import '../../view_model/for_you_cubit/for_you_book_cubit.dart';
 import '../../view_model/free_book_cubit/free_book_cubit.dart';
 import 'book_type.dart';
 import 'main_book_style_list.dart';
-
+ 
 class AllBody extends StatelessWidget {
   const AllBody({
     super.key,
@@ -26,12 +27,13 @@ class AllBody extends StatelessWidget {
             BlocBuilder<ForYouBookCubit, ForYouBookState>(
               builder: (context, state) {
                 if (state is ForYouBookSuccess) {
+                  
                   return Column(
                     children: [
                       BookType(
                       type: 'For You',
                       allPageFun: () => Get.to(()=>const SeeAllPage(),arguments: {'bookCategory': 'For You', 'books': state.books}),
-
+  
                       ),
                       MainBookStyleList(books: state.books),
                     ],

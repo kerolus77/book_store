@@ -1,9 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/Features/cart/presentation/view/cart_screen.dart';
+import 'package:flutter_application_3/Features/home/presentation/view/widget/favorite-screen.dart';
+import 'package:get/get.dart';
 
+import '../../../../../Core/widget/small_button.dart';
 import '../../../../../constant.dart';
 import './profile_icon.dart';
-import 'app_bar_button.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -24,25 +27,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Text(
                 'Hi, kerolus',
-                style: subtitleStyle.copyWith(color: Colors.black),
+                style: font19w500.copyWith(color: Colors.black),
               ),
             ],
           ),
           Row(
             children: [
-              AppBarButton(
+              SmallButton(
                 icon: Icons.notifications_outlined,
                 onTap: ()async {
                   await FirebaseAuth.instance.signOut();
                 },
               ),
-              AppBarButton(
+              SmallButton(
                 icon: Icons.settings_outlined,
-                onTap: () {},
+                onTap: () {
+                  Get.to(()=>FavoriteScreen());
+                },
               ),
-              AppBarButton(
+              SmallButton(
                 icon: Icons.download_outlined,
-                onTap: () {},
+                onTap: () {
+                  Get.to(()=>CartScreen());
+                },
               )
             ],
           )

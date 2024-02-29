@@ -6,4 +6,5 @@ abstract class HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchForYouBooks();
   Future<Either<Failure, List<BookModel>>> fetchFreeBooks();
   Future<Either<Failure, List<BookModel>>> fetchCategoryBooks(String category);
+  Future<void> fetchAllBook();
 }
