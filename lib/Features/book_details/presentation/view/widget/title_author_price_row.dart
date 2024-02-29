@@ -38,7 +38,7 @@ class TitleAuthorPriceRow extends StatelessWidget {
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(book.saleInfo?.retailPrice?.amount==null?'Free':'${((book.saleInfo!.retailPrice!.amount)!.ceil())%100}\$',
-              style: subtitleStyle.copyWith(color: const Color.fromARGB(255, 34, 98, 36),fontWeight: FontWeight.w700),),
+              style: font19w500.copyWith(color: const Color.fromARGB(255, 34, 98, 36),fontWeight: FontWeight.w700),),
             ),
           )
       ],

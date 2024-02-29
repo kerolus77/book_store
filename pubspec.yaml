@@ -55,6 +55,10 @@ dependencies:
 
   twitter_login: ^4.4.2
   flutter_facebook_auth: ^6.1.0
+  cloud_firestore: ^4.15.5
+  flutter_staggered_animations: ^1.1.1
+
+  flutter_slidable: ^3.0.1
 
 dev_dependencies:
   flutter_test:

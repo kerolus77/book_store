@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/widget/rating_bar.dart';
 import 'package:flutter_application_3/Features/home/Data/models/book_model/book_model.dart';
-import 'package:flutter_application_3/Features/home/presentation/view/widget/app_bar_button.dart';
+import 'package:flutter_application_3/Core/widget/small_button.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/favorite_button.dart';
 
 class RatingButtonRow extends StatelessWidget {
@@ -23,9 +23,9 @@ class RatingButtonRow extends StatelessWidget {
                       part: false,size: 27,),
         Row(
           children: [
-            const FavoriteButton(),
-            AppBarButton(icon: Icons.download_rounded, onTap: (){}),
-            AppBarButton(icon: Icons.menu_book_sharp, onTap: (){}),
+             FavoriteButton(book: book),
+            SmallButton(icon: Icons.download_rounded, onTap: (){}),
+            SmallButton(icon: Icons.menu_book_sharp, onTap: (){}),
           ],
         )
       ],

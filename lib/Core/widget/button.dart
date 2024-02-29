@@ -16,23 +16,26 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        alignment: Alignment.center,
-        width: SizeConfig.orientation == Orientation.landscape
-            ? SizeConfig.screenWidth / 2
-            : MediaQuery.of(context).size.width - 50,
-        height: SizeConfig.orientation == Orientation.landscape
-            ? SizeConfig.screenHeight / 8
-            : MediaQuery.of(context).size.width / 8,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: color,
-            border: Border.all(width: 1, color: Colors.grey)),
-        child: Text(
-          label,
-          style: buttonStyle22
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          alignment: Alignment.center,
+          width: SizeConfig.orientation == Orientation.landscape
+              ? SizeConfig.screenWidth / 2
+              : MediaQuery.of(context).size.width - 50,
+          height: SizeConfig.orientation == Orientation.landscape
+              ? SizeConfig.screenHeight / 8
+              : MediaQuery.of(context).size.width / 8,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: color,
+              border: Border.all(width: 1, color: Colors.grey)),
+          child: Text(
+            label,
+            style: buttonStyle22
+          ),
         ),
       ),
     );
