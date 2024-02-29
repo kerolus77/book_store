@@ -2,12 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/book_second_list_view_item.dart';
 
-import '../../../../cart/presentation/view/widget/cart_list_view_item.dart';
-import '../../../Data/models/book_model/book_model.dart';
+import '../../../../home/Data/models/book_model/book_model.dart';
+import 'cart_list_view_item.dart';
 
-class SecondBookStyleList extends StatelessWidget {
+
+class CartListStyle extends StatelessWidget {
   final List<BookModel> books;
-  const SecondBookStyleList({
+  const CartListStyle({
     Key? key,
     required this.books,
   }) : super(key: key);
@@ -19,9 +20,7 @@ class SecondBookStyleList extends StatelessWidget {
         itemBuilder: (context, index) {
           return  Padding(
             padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
-            child: 
-            CartListViewItem(book: books[index], index: index)
-            //BookSecondListViewItem(book:books[index],index: index,),
+            child: CartListViewItem(book:books[index],index: index,),
           );
         },
         itemCount: books.length,

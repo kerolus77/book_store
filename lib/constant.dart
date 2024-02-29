@@ -57,7 +57,14 @@ TextStyle get font16W600 {
     ),
   );
 }
-
+TextStyle get font17w600 {
+  return GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+    ),
+  );
+}
 TextStyle get buttonTitleStyle {
   return GoogleFonts.yesevaOne(
       textStyle: const TextStyle(
@@ -66,7 +73,7 @@ TextStyle get buttonTitleStyle {
   ));
 }
 
-TextStyle get subtitleStyle {
+TextStyle get font19w500 {
   return GoogleFonts.poppins(
     textStyle: const TextStyle(
       fontSize: 19,

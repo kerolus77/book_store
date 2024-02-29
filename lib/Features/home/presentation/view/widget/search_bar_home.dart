@@ -40,7 +40,7 @@ class SearchBarHome extends StatelessWidget {
         
                         autofocus: false,
         
-                        style: subtitleStyle,
+                        style: font19w500,
                         cursorColor: Colors.grey[700],
                         cursorHeight: 20,
         
