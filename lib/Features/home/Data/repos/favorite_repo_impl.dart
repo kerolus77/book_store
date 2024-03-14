@@ -2,14 +2,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_application_3/Features/cart/data/cart_repo_impl.dart';
 
 import '../models/book_model/book_model.dart';
 import 'favorite_repo.dart';
 
 class FavoriteRepoImpl extends FavoriteRepo{
-  Set<String> favoriteList=Set();
+  Set<String> favoriteId=Set();
+  final CartRepoImpl cartRepoImpl;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final String _userId = FirebaseAuth.instance.currentUser!.uid;
+
+  FavoriteRepoImpl(this.cartRepoImpl);
 
   @override
   Future<void> addFavoriteItem( BookModel book)async {
@@ -19,7 +23,7 @@ class FavoriteRepoImpl extends FavoriteRepo{
         .collection('favorite_items')
         .doc(book.id)
         .set(book.toJson());
-        favoriteList.add(book.id!);
+        favoriteId.add(book.id!);
   }
 
   @override
@@ -34,7 +38,9 @@ class FavoriteRepoImpl extends FavoriteRepo{
         .map((doc) {
           final bookModel = BookModel.fromJson(doc.data() as Map<String, dynamic>);
           // Save the book ID to the set
-          favoriteList.add(bookModel.id!);
+          favoriteId.add(bookModel.id!);
+          cartRepoImpl.cartId.contains((bookModel.id))?bookModel.isInCart=1:bookModel.isInCart=0;
+          
           return bookModel;
         })
         .toList();
@@ -55,7 +61,7 @@ class FavoriteRepoImpl extends FavoriteRepo{
         .collection('favorite_items')
         .doc(bookId)
         .delete();
-        favoriteList.removeWhere((element) => element.contains(bookId));
+        favoriteId.removeWhere((element) => element.contains(bookId));
   } catch (e) {
     print("Error removing favorite item: $e");
   }
