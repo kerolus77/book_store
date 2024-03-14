@@ -23,9 +23,7 @@ class FavoriteBody extends StatelessWidget {
             
             state.maybeWhen(
               loading: () => CircularProgressIndicator(),
-              success: (data) => Expanded(
-                child: SecondBookStyleList(books: data),
-              ),
+              success: (data) => SecondBookStyleList(books: data),
               error: (String errMessage) => Text('Error: $errMessage'),
               orElse: () => Container(), )
           ],

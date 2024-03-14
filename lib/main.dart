@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Core/services/service_locator.dart';
+import 'package:flutter_application_3/Features/cart/data/cart_repo_impl.dart';
+import 'package:flutter_application_3/Features/cart/presentation/view_model/cubit/cart_cubit.dart';
 import 'package:flutter_application_3/Features/home/Data/repos/favorite_repo_impl.dart';
 import 'package:flutter_application_3/Features/home/Data/repos/home_repo_impl.dart';
 import 'package:flutter_application_3/Features/home/presentation/view_model/category_book_cubit/category_book_cubit.dart';
@@ -32,7 +34,9 @@ Future<void> main() async {
 
   
   setup();
+  await getIt.get<CartRepoImpl>().getCartItems();
    await getIt.get<FavoriteRepoImpl>().getFavoriteItems();
+   
   runApp(const BookStore());
 }
 
@@ -46,6 +50,10 @@ class BookStore extends StatelessWidget {
         BlocProvider (
           create: (context) =>
               FavoriteCubit(getIt.get<FavoriteRepoImpl>())..emitGetFavoriteItem(),
+        ),
+        BlocProvider (
+          create: (context) =>
+              CartCubit(getIt.get<CartRepoImpl>())..emitGetCartItem(),
         ),
         BlocProvider(create: (context) => SliderCubit()),
         BlocProvider(create: (context) => CategoryListCubit()),

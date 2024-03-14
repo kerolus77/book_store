@@ -1,14 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:get/get.dart';
-
 import 'package:flutter_application_3/Core/widget/rating_bar.dart';
 import 'package:flutter_application_3/Features/home/Data/models/book_model/book_model.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/cart_button.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/custom_book_image.dart';
 import 'package:flutter_application_3/Features/home/presentation/view/widget/favorite_button.dart';
 import 'package:flutter_application_3/size_config.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:get/get.dart';
 
 import '../../../../../constant.dart';
 import '../../../../book_details/presentation/view/book_details_screen.dart';
@@ -74,7 +73,7 @@ class BookSecondListViewItem extends StatelessWidget {
                        Row(
                         children: [
                           FavoriteButton(book:book),
-                          CartButton()
+                          CartButton( book: book,)
                         ],
                       )
                 ],

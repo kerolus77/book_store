@@ -24,14 +24,7 @@ class CartListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimationConfiguration.staggeredList(
-                position: index,
-                duration: const Duration(milliseconds: 1000),
-                child: SlideAnimation(
-    horizontalOffset: 400,
-    child: FlipAnimation(
-    
-    child: GestureDetector(
+    return  GestureDetector(
       onTap: () {
         Get.to(()=>const BookDetailsScreen(),arguments: {'book':book});
       },
@@ -105,6 +98,6 @@ class CartListViewItem extends StatelessWidget {
         ],
         ),
       ),
-    ), ),),);
+    );
   }
 }
